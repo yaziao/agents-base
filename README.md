@@ -40,7 +40,7 @@ AGENTS.md
 | --- | --- |
 | AGENTS.md | 基本工作原则、修改边界、验证、安全、用户修改保护、任务范围和长任务规则 |
 | Superpowers Skills | 具体的软件开发工作流，例如规划、调试、TDD、Review 和多 Agent 协作 |
-| Custom Skills | 本模板额外提供的上下文管理、影响分析和通用代码 Review 能力 |
+| Custom Skills | 本模板额外提供的初始化、上下文管理、影响分析和通用代码 Review 能力 |
 | .ai/ | 当前项目的任务状态和长期有效的架构决策 |
 
 ## 目录结构
@@ -74,7 +74,8 @@ AGENTS.md
         └── custom/
             ├── context-management/
             ├── change-impact-analysis/
-            └── code-review/
+            ├── code-review/
+            └── init/
 ~~~
 
 ## AGENTS.md
@@ -129,6 +130,7 @@ AGENTS.md 是稳定的通用规则层，约束 AI 如何工作，但不规定任
 - context-management：通过 .ai/current-task.md 和 .ai/decisions.md 维护长任务上下文，降低压缩后丢失状态、重复分析和重复修改的风险。
 - change-impact-analysis：在重大修改前沿调用方、依赖、数据结构、配置、并发、外部接口和测试检查影响范围，避免无依据扩大重构。
 - code-review：以 Critical、High、Medium、Low 描述实际发现的问题，覆盖正确性、安全、并发、资源、性能、兼容性和测试，不进行代码质量打分。
+- init：初始化或检查项目 AI 开发环境，建立 .ai/ 项目上下文，检查现有 AI 配置和 Skills，并保护已有项目规则不被覆盖。
 
 Custom Skills 是本项目自己的内容，不是 Superpowers 的原始文件。
 
